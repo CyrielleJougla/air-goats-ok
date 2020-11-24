@@ -4,4 +4,5 @@
   <br> <%= "Vous avez réservé #{resa.goat.name} du #{resa.start_date} au #{resa.end_date}" %>
 <% end %>
 
+<br> <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"}  %>
 <br> <%= link_to "Retour", goats_path %>

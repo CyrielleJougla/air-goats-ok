@@ -4,6 +4,7 @@
 <br> <% if @goat.picture.attached? %>
   <%= cl_image_tag @goat.picture.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+<%= console %>
 
 <br> <%= "Age : #{@goat.age} ans" %>
 <br> <%= "Race : #{@goat.race.capitalize}" %>
