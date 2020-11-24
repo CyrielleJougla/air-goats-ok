@@ -9,16 +9,15 @@ class GoatsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @goat = Goat.new
   end
 
   def create
     @goat = Goat.new(goat_params)
-    @user = User.find(params[:user_id])
-    @goat.user = @user
+    @goat.user = current_user
     if @goat.save
-      redirect_to goats_path
+      redirect_to goat_path(@goat)
     else
       render :new
     end

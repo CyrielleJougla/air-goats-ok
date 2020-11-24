@@ -1,4 +1,4 @@
-<% simple_form_for [ @user, @goat ] do |f| %>
+<%= simple_form_for @goat do |f| %>
   <%= f.input :name %>
   <%= f.input :price %>
   <%= f.input :age %>
@@ -8,3 +8,4 @@
   <%= f.input :description %>
   <%= f.submit %>
 <% end %>
+
