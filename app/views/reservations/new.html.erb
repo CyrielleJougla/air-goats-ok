@@ -1,0 +1,11 @@
+<h1> Réservez <%= @goat.name %> </h1>
+
+
+<%= simple_form_for [@goat, @reservation] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit %>
+<% end %>
+
+<br> <%= link_to "Retour", goat_path(@goat) %>
+

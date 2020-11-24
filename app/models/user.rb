@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :picture
   has_many :goats
+  has_many :reservations
+  #has_many :goats, through: :reservations
+  validates :first_name, :last_name, :address, presence: true
 end
