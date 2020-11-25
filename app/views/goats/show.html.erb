@@ -1,15 +1,30 @@
-<h1> <%= @goat.name.capitalize %> </h1>
+
 
 <br> <% if @goat.picture.attached? %>
   <%= cl_image_tag @goat.picture.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 
-<br> <%= "Age : #{@goat.age} ans" %>
-<br> <%= "Race : #{@goat.race.capitalize}" %>
-<br> <%= "Appétit : #{@goat.appetite.capitalize}" %>
-<br> <%= "Atout charme : #{@goat.bonus.capitalize}" %>
-<br> <%= "Description : #{@goat.description.capitalize}" %>
-<br> <%= "Prix : #{@goat.price}€ / jour" %>
+<h1> <%= @goat.name.capitalize %> </h1>
 
-<br> <%= link_to "Réservez-moi", new_goat_reservation_path(@goat) %>
-<br> <%= link_to "Retour", goats_path %>
+<div class="card">
+  <ul>
+      <br><li> <%= "Age : #{@goat.age} ans" %></li>
+      <br><li> <%= "Race : #{@goat.race.capitalize}" %></li>
+      <br><li> <%= "Appétit : #{@goat.appetite.capitalize}" %></li>
+      <br><li> <%= "Atout charme : #{@goat.bonus.capitalize}" %></li>
+      <br><li> <%= "Prix : #{@goat.price}€ / jour" %></li>
+  </ul>
+</div>
+
+<div class="card">
+   <%= "Description : #{@goat.description.capitalize}" %>
+</div>
+
+
+<div class="btn-green btn-center">
+  <%=link_to "Réservez-moi", new_goat_reservation_path(@goat) %>
+</div>
+
+
+ <br> <%= link_to "Retour", goats_path %>
+
