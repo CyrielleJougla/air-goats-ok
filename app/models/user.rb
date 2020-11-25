@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :goats
   has_many :reservations
   #has_many :goats, through: :reservations
-  # validates :first_name, :last_name, :address, presence: true
 end
