@@ -1,11 +1,31 @@
-<h1> Vos réservations </h1>
+<div = container >
+  <h1> Mon compte </h1>
 
-<% @reservations.each do |resa| %>
-  <br> <%= "Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}" %>
-<% end %>
+  <h3> Mes réservations </h3>
 
-<br> <%= link_to "Ajouter une chèvre", new_goat_path %>
+  <% @reservations.each do |resa| %>
+    <div class="card-goat m-3">
+      <% if resa.goat.picture.attached? %>
+        <img> <%= cl_image_tag resa.goat.picture.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <div class="card-goat-infos">
+        <%= "Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}" %>
+      </div>
+    </div>
+  <% end %>
+
+  <h3> Mes chèvres </h3>
+
+  <p> Vous etes le propriétaire de :</p>
+  <%= @user.goats.first.name %>
+  <% if @user.goats.first.picture.attached? %>
+    <img> <%= cl_image_tag @user.goats.first.picture.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
 
 
-<br> <%= link_to "Retour", goats_path %>
-<!--<br> <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"}  %> -->
+<br> <%= link_to "Ajouter", new_goat_path, class: "btn btn-ghost" %>
+
+
+  <!--<br> <br> <%= link_to "Retour", goats_path %>-->
+  <!--<br> <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"}  %> -->
+</div>
