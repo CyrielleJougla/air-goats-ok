@@ -1,12 +1,12 @@
 <%= simple_form_for @goat do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :age %>
-  <%= f.input :race %>
-  <%= f.input :appetite %>
-  <%= f.input :bonus %>
-  <%= f.input :description %>
-  <%= f.input :picture, as: :file %>
-  <%= f.submit %>
+  <%= f.input :name, label:"Le petit nom de votre chèvre :" %>
+  <%= f.input :age, label:"Son âge :" %>
+  <%= f.input :race, label: "Sa race :" %>
+  <%= f.input :appetite, label:"Son degré d'appétit : " %>
+  <%= f.input :bonus, label:"Son atout charme :" %>
+  <%= f.input :description, label: "Dites nous en plus sur votre biquette d'amour !" %>
+  <%= f.input :price, label: "Prix par jour à la location :" %>
+  <%= f.input :picture, as: :file, label:"Photo la plus mignonne possible :" %>
+  <%= f.button :submit, "Proposer votre chèvre à la location" %>
 <% end %>
 

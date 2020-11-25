@@ -2,9 +2,9 @@
 
 
 <%= simple_form_for [@goat, @reservation] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
+  <%= f.input :start_date, label: "Date de début" %>
+  <%= f.input :end_date, label: "Date de fin" %>
+  <%= f.button :submit, "Valider la réservation" %>
 <% end %>
 
 <br> <%= link_to "Retour", goat_path(@goat) %>
