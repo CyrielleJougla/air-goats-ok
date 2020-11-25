@@ -1,11 +1,12 @@
 <h1> Réservez <%= @goat.name %> </h1>
 
-
-<%= simple_form_for [@goat, @reservation] do |f| %>
-  <%= f.input :start_date, label: "Date de début" %>
-  <%= f.input :end_date, label: "Date de fin" %>
-  <%= f.button :submit, "Valider la réservation" %>
-<% end %>
+<div class "div-reservation">
+  <%= simple_form_for [@goat, @reservation] do |f| %>
+    <%= f.input :start_date, label: "Date de début" %>
+    <%= f.input :end_date, label: "Date de fin" %>
+    <%= f.button :submit, "Valider la réservation" %>
+  <% end %>
+</div>
 
 <br> <%= link_to "Retour", goat_path(@goat) %>
 
