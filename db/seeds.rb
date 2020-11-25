@@ -14,4 +14,8 @@ user2 = User.create!(first_name:"Laura", last_name:"Durand", email:"laura@gmail.
 puts "users created"
 goat1 = Goat.create!(name:"Blandine", price: 4, age: 3, race: "naine", appetite: "affamée", bonus: "toute douce", description:"Blandine est trop mignonne et aime les enfants", user: user1)
 goat2 = Goat.create!(name:"Blanchette", price: 4, age: 2, race: "angora", appetite: "elle dévore", bonus: "trop cute", description:"Blanchette nettoie vos prés comme personne", user: user2)
+goat3 = Goat.create!(name:"Popo", price: 1, age: 3, race: "Alpines", appetite: "elle dévore", bonus: "trop cute", description:"Blanchette nettoie vos prés comme personne", user: user2)
+goat4 = Goat.create!(name:"Coco", price: 1, age: 3, race: "Alpines", appetite: "elle dévore", bonus: "trop cute", description:"Blanchette nettoie vos prés comme personne", user: user2)
+
+
 puts "goats created"

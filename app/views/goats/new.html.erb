@@ -1,3 +1,6 @@
+<h1> Ajouter une chèvre </h1>
+
+
 <%= simple_form_for @goat do |f| %>
   <%= f.input :name, label:"Le petit nom de votre chèvre :" %>
   <%= f.input :age, label:"Son âge :" %>
@@ -7,6 +10,6 @@
   <%= f.input :description, label: "Dites nous en plus sur votre biquette d'amour !" %>
   <%= f.input :price, label: "Prix par jour à la location :" %>
   <%= f.input :picture, as: :file, label:"Photo la plus mignonne possible :" %>
-  <%= f.button :submit, "Proposer votre chèvre à la location" %>
+  <%= f.button :submit, "Proposer votre chèvre à la location", class: "btn btn-ghost" %>
 <% end %>
 
