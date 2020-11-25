@@ -16,11 +16,9 @@
 
   <h3> Mes chèvres </h3>
 
-  <p> Vous etes le propriétaire de :</p>
-  <%= @user.goats.first.name %>
-  <% if @user.goats.first.picture.attached? %>
-    <img> <%= cl_image_tag @user.goats.first.picture.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
+  <p> Vous êtes le propriétaire de :</p>
+    <%= image_tag "goat1", class: "image" %>
+  <%= @user.goats.first.name.capitalize %>
 
 
 <br> <%= link_to "Ajouter", new_goat_path, class: "btn btn-ghost" %>
