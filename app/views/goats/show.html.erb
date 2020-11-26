@@ -1,12 +1,22 @@
 
-
+<!--
 <br> <% if @goat.picture.attached? %>
-  <%= cl_image_tag @goat.picture.key, height: 300, width: 400, crop: :fill %>
-<% end %>
 
-<h1> <%= @goat.name.capitalize %> </h1>
+<%=cl_image_tag @goat.picture.key, height: 300, width: 400, crop: :fill %>
+
+<% end %> -->
+
+
+<br> <h1> <%= @goat.name.capitalize %> </h1>
 
 <div class="card">
+
+<br> <% if @goat.picture.attached? %>
+
+<%=cl_image_tag @goat.picture.key, height: 300, width: 400, crop: :fill %>
+
+<% end %>
+
   <ul>
       <br><li> <%= "Age : #{@goat.age} ans" %></li>
       <br><li> <%= "Race : #{@goat.race.capitalize}" %></li>

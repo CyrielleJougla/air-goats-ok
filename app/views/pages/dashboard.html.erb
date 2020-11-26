@@ -1,5 +1,7 @@
 <body>
    <h1>  Tableau de bord  </h1>
+
+
     <div class="row">
       <div class="col">
         <h3> Mes réservations </h3>
@@ -12,19 +14,17 @@
             <% if resa.goat.picture.attached? %>
               <img> <%= cl_image_tag resa.goat.picture.key, height: 300, width: 400, crop: :fill %>
             <% end %>
-          <div class="card-goat-infos">
-          <%= "Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}" %>
+          <div class=“card-goat-infos”>
+          <%= “Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}” %>
           <% end %>
           </div>
         <% end %>
-        </div>
-      </div>
 
 
 
-      <div class="col">
-       <h3> Mes chèvres  <%= link_to "Ajouter", new_goat_path, class: "btn btn-ghost"%></h3>
-
+      <div class=“col”>
+       <h3> Mes chèvres  <%= link_to “Ajouter”, new_goat_path, class: “btn btn-ghost”%></h3>
+        
         <div class="card-goat cards px-4" id="droite">
           <% if current_user.goats.empty? %>
             <p> Vous n'avez pas proposé vos chèvres à la location. </p>
