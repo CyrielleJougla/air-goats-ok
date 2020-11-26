@@ -2,40 +2,41 @@
    <h1>  Tableau de bord  </h1>
     <div class="row">
       <div class="col">
-             <h3> Mes réservations </h3>
-             <div class="card-goat cards px-4">
+        <h3> Mes réservations </h3>
+        <div class="card-goat cards px-4">
 
-         <% if current_user.reservations == nil %>
-    <%= "Vous n'avez pas de réservations en cours." %>
-  <% else %>
-    <% @reservations.each do |resa| %>
-      
-        <% if resa.goat.picture.attached? %>
-          <img> <%= cl_image_tag resa.goat.picture.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-        <div class="card-goat-infos">
+        <% if current_user.reservations.empty? %>
+          <p> Vous n'avez pas de réservations en cours.</p>
+        <% else %>
+          <% @reservations.each do |resa| %>
+            <% if resa.goat.picture.attached? %>
+              <img> <%= cl_image_tag resa.goat.picture.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          <div class="card-goat-infos">
           <%= "Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}" %>
+          <% end %>
+          </div>
+        <% end %>
         </div>
       </div>
-    <% end %>
-  <% end %>
+
 
 
       <div class="col">
        <h3> Mes chèvres  <%= link_to "Ajouter", new_goat_path, class: "btn btn-ghost"%></h3>
 
         <div class="card-goat cards px-4" id="droite">
-           <% if current_user.goats == nil %>
-    <%= "Vous n'avez pas proposé vos chèvres à la location." %>
-  <% else %>
-    <p>Vous etes le propriétaire de : </p>
-    <ul>
-      <% current_user.goats.each do |goat| %>
-        <li> <%= goat.name  %> </li>
-      <% end %>
-    </ul>
-  <% end %>
+          <% if current_user.goats.empty? %>
+            <p> Vous n'avez pas proposé vos chèvres à la location. </p>
+          <% else %>
+            <p>Vous etes le propriétaire de : </p>
+            <ul>
+            <% current_user.goats.each do |goat| %>
+              <li> <%= goat.name  %> </li>
+            <% end %>
+            </ul>
+          <% end %>
         </div>
       </div>
-    </div>
+
   </body>
