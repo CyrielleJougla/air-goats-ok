@@ -1,13 +1,15 @@
-<div = container >
-  <h1> Tableau de bord </h1>
+<body>
+   <h1>  Tableau de bord  </h1>
+    <div class="row">
+      <div class="col">
+             <h3> Mes réservations </h3>
+             <div class="card-goat cards px-4">
 
-  <h3> Mes réservations </h3>
-
-  <% if current_user.reservations == nil %>
+         <% if current_user.reservations == nil %>
     <%= "Vous n'avez pas de réservations en cours." %>
   <% else %>
     <% @reservations.each do |resa| %>
-      <div class="card-goat m-3">
+      
         <% if resa.goat.picture.attached? %>
           <img> <%= cl_image_tag resa.goat.picture.key, height: 300, width: 400, crop: :fill %>
         <% end %>
@@ -18,9 +20,12 @@
     <% end %>
   <% end %>
 
-  <h3> Mes chèvres </h3>
 
-  <% if current_user.goats == nil %>
+      <div class="col">
+       <h3> Mes chèvres  <%= link_to "Ajouter", new_goat_path, class: "btn btn-ghost"%></h3>
+
+        <div class="card-goat cards px-4" id="droite">
+           <% if current_user.goats == nil %>
     <%= "Vous n'avez pas proposé vos chèvres à la location." %>
   <% else %>
     <p>Vous etes le propriétaire de : </p>
@@ -30,13 +35,7 @@
       <% end %>
     </ul>
   <% end %>
-
-
-
-
-<br> <%= link_to "Ajouter", new_goat_path, class: "btn btn-ghost" %>
-
-
-  <!--<br> <br> <%= link_to "Retour", goats_path %>-->
-  <!--<br> <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"}  %> -->
-</div>
+        </div>
+      </div>
+    </div>
+  </body>

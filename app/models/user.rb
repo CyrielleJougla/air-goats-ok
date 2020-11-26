@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_one_attached :picture
   has_many :goats
   has_many :reservations
-  #has_many :goats, through: :reservations
+  # has_many :goats, through: :reservations
 end

@@ -1,5 +1,4 @@
 class ReservationsController < ApplicationController
-
   def new
     @user = current_user
     @goat = Goat.find(params[:goat_id])
