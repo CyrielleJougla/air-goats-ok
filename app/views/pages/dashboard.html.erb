@@ -1,27 +1,37 @@
-<div = container >
-  <h1> Mon compte </h1>
 
-  <h3> Mes réservations </h3>
+<body>
+   <h1> Mon compte </h1>
+    <div class="row">
+      <div class="col">
+             <h3> Mes réservations </h3>
+             <div class="card-goat cards px-4">
 
-  <% @reservations.each do |resa| %>
-    <div class="card-goat m-3">
-      <% if resa.goat.picture.attached? %>
-        <img> <%= cl_image_tag resa.goat.picture.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <div class="card-goat-infos">
-        <%= "Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}" %>
+         <% @reservations.each do |resa| %>
+
+          <% if resa.goat.picture.attached? %>
+            <img> <%= cl_image_tag resa.goat.picture.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+          <div class="card-goat-infos">
+            <%= "Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}" %>
+          </div>
+       <% end %>
+      </div>
+      </div>
+
+
+      <div class="col">
+       <h3> Mes chèvres  <%= link_to "Ajouter", new_goat_path, class: "btn btn-ghost"%></h3>
+
+        <div class="card-goat cards px-4" id="droite">
+           <%= image_tag "goat1", class: "image" %>
+           <%= @user.goats.first.name.capitalize %>
+        </div>
       </div>
     </div>
-  <% end %>
-
-  <h3> Mes chèvres </h3>
-
-  <p> Vous êtes le propriétaire de :</p>
-    <%= image_tag "goat1", class: "image" %>
-  <%= @user.goats.first.name.capitalize %>
+  </body>
 
 
-<br> <%= link_to "Ajouter", new_goat_path, class: "btn btn-ghost" %>
+
 
 
   <!--<br> <br> <%= link_to "Retour", goats_path %>-->

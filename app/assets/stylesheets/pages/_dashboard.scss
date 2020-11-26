@@ -1,5 +1,16 @@
-#container {
+#global {
   background-color : #E0E0E0;
+  width: 100%;
+}
+
+#global #gauche{
+  float: left;
+  width: 50%;
+}
+
+#global #droite{
+   // width: 50%;
+   margin-left: 60%;
 }
 
 h1 {
@@ -18,6 +29,7 @@ h3 {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 0%
 }
 
 .card-goat .img {
@@ -36,7 +48,7 @@ h3 {
 
 .btn-ghost {
   color: #292929;
-  border: 1px solid #292929;
+  border: 1px solid #7DD181;
   padding: 3px 10px;
   border-radius: 50px;
   font-weight: lighter;
@@ -47,3 +59,18 @@ h3 {
 .btn-ghost:hover {
   opacity: 1;
 }
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row {
+        display: flex;
+      }
+      .col {
+        flex: 1;
+        padding: 1em;
+        border: none;
+      }
