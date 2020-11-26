@@ -42,33 +42,32 @@
   <div class="pv d-flex justify-content-center align-items-center flex-column">
     <h3 class="pv">🐑 Plus mignonnes qu'une tondeuse, plus écologiques et très efficaces ! 🐑</h3>
 
-  <div class="search_bar_div">
-    <%= form_tag goats_path(anchor:"goats-list"), method: :get do %>
-      <div class="search-form-control form-group">
+    <div class="search_bar_div">
+      <%= form_tag goats_path(anchor:"goats-list"), method: :get do %>
+        <div class="search-form-control form-group">
 
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control string required",
-          placeholder: "Retrouvez votre chèvre préférée"
-        %>
-        <%= select_tag "race", options_for_select(Goat::RACE), include_blank: true %>
-        <%= select_tag "appetite", options_for_select(Goat::APPETITE), include_blank: true %>
-        <%= submit_tag "Rechercher", class: "btn btn-mygreen" do %>
-            <i class="fas fa-search"></i> Rechercher
-        <% end %>
-      </div>
-    <% end %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control string required",
+            placeholder: "Retrouvez votre chèvre préférée"
+          %>
+          <%= select_tag "race", options_for_select(Goat::RACE), include_blank: true %>
+          <%= select_tag "appetite", options_for_select(Goat::APPETITE), include_blank: true %>
+          <%= submit_tag "Rechercher", class: "btn btn-mygreen" do %>
+              <i class="fas fa-search"></i> Rechercher
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-<div class="container">
-  <div class="cards px-4" id="goats-list">
-    <% @goats.each do |goat| %>
-      <div class="card-category" style="background-image: url('<%= cl_image_path goat.picture.key if goat.picture.attached? %>')" >
-        <%= link_to goat.name.capitalize, goat_path(goat), class: "cards-link" %>
-      </div>
-    <% end %>
+  <div class="container">
+    <div class="cards px-4" id="goats-list">
+      <% @goats.each do |goat| %>
+        <div class="card-category" style="background-image: url('<%= cl_image_path goat.picture.key if goat.picture.attached? %>')" >
+          <%= link_to goat.name.capitalize, goat_path(goat), class: "cards-link" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
 </div>
-
-
