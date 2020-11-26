@@ -1,24 +1,37 @@
 <div = container >
-  <h1> Mon compte </h1>
+  <h1> Tableau de bord </h1>
 
   <h3> Mes réservations </h3>
 
-  <% @reservations.each do |resa| %>
-    <div class="card-goat m-3">
-      <% if resa.goat.picture.attached? %>
-        <img> <%= cl_image_tag resa.goat.picture.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <div class="card-goat-infos">
-        <%= "Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}" %>
+  <% if current_user.reservations == nil %>
+    <%= "Vous n'avez pas de réservations en cours." %>
+  <% else %>
+    <% @reservations.each do |resa| %>
+      <div class="card-goat m-3">
+        <% if resa.goat.picture.attached? %>
+          <img> <%= cl_image_tag resa.goat.picture.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <div class="card-goat-infos">
+          <%= "Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}" %>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 
   <h3> Mes chèvres </h3>
 
-  <p> Vous êtes le propriétaire de :</p>
-    <%= image_tag "goat1", class: "image" %>
-  <%= @user.goats.first.name.capitalize %>
+  <% if current_user.goats == nil %>
+    <%= "Vous n'avez pas proposé vos chèvres à la location." %>
+  <% else %>
+    <p>Vous etes le propriétaire de : </p>
+    <ul>
+      <% current_user.goats.each do |goat| %>
+        <li> <%= goat.name  %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
 
 
 <br> <%= link_to "Ajouter", new_goat_path, class: "btn btn-ghost" %>
