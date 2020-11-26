@@ -63,7 +63,7 @@
 <div class="container">
   <div class="cards px-4">
     <% @goats.each do |goat| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://previews.123rf.com/images/makspogonii/makspogonii1106/makspogonii110600004/9767268-ch%C3%A8vre-dr%C3%B4le-met-dans-sa-langue.jpg)">
+      <div class="card-category" style="background-image: url('<%= cl_image_path goat.picture.key if goat.picture.attached? %>')" >
         <%= link_to goat.name.capitalize, goat_path(goat), class: "cards-link" %>
       </div>
     <% end %>
