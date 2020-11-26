@@ -13,12 +13,31 @@
 @import "pages/index";
 
 body {
-  margin-bottom: 0px !important;
+  margin: 0px !important;
+  min-height: 100vh !important;
 }
 
-// .coOntent-container {
-// margin-bottom: 200px;
-// }
-// .foooter {
-//   margin-top: 500px;
-// }
+.body-container {
+  width: auto;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+}
+
+.container {
+  width: auto;
+  // padding-top: 50px;
+  // padding-bottom: 50px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-container {
+min-height: 100vh;
+display:flex;
+flex-direction: column;
+}
+.content-container {
+flex-grow:1;
+}
