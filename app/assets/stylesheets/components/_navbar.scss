@@ -1,6 +1,12 @@
+.navbar-container {
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: #7DD181;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -16,4 +22,7 @@
   border-radius: 50%;
 }
 
+.blend {
+  mix-blend-mode: exclusion;
+}
 
