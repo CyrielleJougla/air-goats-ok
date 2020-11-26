@@ -1,11 +1,9 @@
 class GoatsController < ApplicationController
   def index
-    if params[:query].present?
-      sql_query = "name ILIKE :query"
-      @goats = Goat.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @goats = Goat.all
-    end
+    @goats = Goat.all
+    @goats = @goats.where("name ILIKE ?", "%#{params[:query]}%") if params[:query].present?
+    @goats = @goats.where(race: params[:race]) if params[:race].present?
+    @goats = @goats.where(appetite: params[:appetite]) if params[:appetite].present?
   end
 
   def show
