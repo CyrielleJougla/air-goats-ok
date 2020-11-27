@@ -8,6 +8,7 @@ class GoatsController < ApplicationController
 
   def show
     @goat = Goat.find(params[:id])
+    @marker = { lat: @goat.user.latitude, lng: @goat.user.longitude } if @goat.user.geocoded?
   end
 
   def new
