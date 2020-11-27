@@ -1,6 +1,12 @@
+.navbar-container {
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: #7DD181;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,10 +14,18 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
 }
 
 .avatar-large {
   width: 56px;
   border-radius: 50%;
+}
+
+.blend {
+  mix-blend-mode: exclusion;
+}
+
+.collapse ul {
+  align-items: center;
 }
