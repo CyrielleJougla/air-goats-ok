@@ -1,11 +1,18 @@
 <div class="container body-container">
   <h1> Réservez <%= @goat.name %> </h1>
-  <div class="div-reservation">
-    <%= simple_form_for [@goat, @reservation] do |f| %>
-      <%= f.input :start_date, label: "Date de début" %>
-      <%= f.input :end_date, label: "Date de fin" %>
-      <%= f.button :submit, "Valider la réservation" %>
-    <% end %>
+  <div class="card-form-resa d-flex align-items-center">
+    <div class="img-part-resa">
+      <% if @goat.picture.attached? %>
+        <%=cl_image_tag @goat.picture.key, height: 300, width: 300, crop: :fill %>
+      <% end %>
+    </div>
+    <div class="form-part-resa d-flex justify-content-center ">
+      <%= simple_form_for [@goat, @reservation] do |f| %>
+        <%= f.input :start_date, label: "Date de début" %>
+        <%= f.input :end_date, label: "Date de fin" %>
+        <%= f.button :submit, "Valider la réservation", class: "btn btn-mywhite"%>
+      <% end %>
+    </div>
   </div>
   <br> <%= link_to "Retour", goat_path(@goat) %>
 </div>
