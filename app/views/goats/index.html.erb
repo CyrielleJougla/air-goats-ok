@@ -41,28 +41,32 @@
   </div>
 
   <div class="search-container">
-    <div class="pv d-flex justify-content-center align-items-center flex-column">
-      <h3 class="pv">🐐 Plus mignonnes qu'une tondeuse, plus écologiques et très efficaces ! 🐐</h3>
+    <div class="pv py-4 d-flex justify-content-center align-items-center flex-column">
+      <h3 class="pv my-4">Plus mignonnes qu'une tondeuse, plus écologiques et très efficaces !</h3>
 
-      <div class="search_bar_div">
+      <div class="search_bar_div my-2">
         <%= form_tag goats_path(anchor:"goats-list"), method: :get do %>
           <div class="search-form-control form-group">
 
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control string required",
-              placeholder: "Retrouvez votre chèvre préférée"
-            %>
-            <%= select_tag "race", options_for_select(Goat::RACE), include_blank: true %>
-            <%= select_tag "appetite", options_for_select(Goat::APPETITE), include_blank: true %>
-            <%= submit_tag "Rechercher", class: "btn btn-mygreen" do %>
-                <i class="fas fa-search"></i> Rechercher
-            <% end %>
+            <div id="goat-field-search" class="form-control string required d-flex">
+              <%= select_tag "Race", options_for_select(Goat::RACE), include_blank: true, class: "btn-bg-white-left" %>
+              <%= select_tag "Appetite", options_for_select(Goat::APPETITE), include_blank: true, class: "btn-bg-white-center" %>
+              <%= text_field_tag :query,
+                params[:query],
+                placeholder: "Retrouvez votre chèvre préférée",
+                class: "flex-grow-1"
+              %>
+
+                <%= submit_tag "Rechercher", class: "btn-bg-white-right btn-mygreen" do %>
+                <% end %>
+            </div>
           </div>
         <% end %>
+
       </div>
     </div>
   </div>
+
 
   <div class="container body-container">
     <div class="cards px-4" id="goats-list">
