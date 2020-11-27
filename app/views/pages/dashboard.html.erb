@@ -27,7 +27,7 @@
           <p>Vous etes le propriétaire de : </p>
         <ul>
           <% current_user.goats.each do |goat| %>
-            <li> <%= goat.name  %> </li>
+            <li> <%= goat.name.capitalize  %> </li>
           <% end %>
         </ul>
           <% end %>
