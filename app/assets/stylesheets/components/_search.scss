@@ -1,5 +1,5 @@
 .search_bar_div {
-width: 60%;
+width: 70%;
 color: red;
 }
 
@@ -19,6 +19,7 @@ color: red;
   border: 1px solid #fff;
   border-radius: 15px;
   background-color: #7DD181;
+  padding:0px;
 }
 
 .btn-mygreen {
@@ -30,3 +31,26 @@ color: red;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+
+
+#goat-field-search {
+  select, input {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: #FFF;
+    &:focus,
+    &:focus,
+    button:focus {
+        outline: none;
+}
+  }
+}
+
+.btn-bg-white-right {
+  background-color: #fff !important;
+  color: #7DD181 !important;
+  border-radius: 0px 14px 14px 0px;
+  padding-left: 10px;
+}
+

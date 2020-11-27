@@ -11,8 +11,10 @@ Goat.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 
 
-user1 = User.create!(first_name:"Louis", last_name:"Dupont", email:"louis@gmail.com", password:"chevre", address:"Saint-Bauzile")
-user2 = User.create!(first_name:"Laura", last_name:"Durand", email:"laura@gmail.com", password:"chevre", address:"Valleraugue")
+user1 = User.create!(first_name:"Cyrielle", last_name:"Jougla", email:"cyrielle@gmail.com", password:"chevre", address:"Marseille", phone:"0678988778", description:"j'adore les chevres")
+user2 = User.create!(first_name:"Periers", last_name:"Durand", email:"sophie@gmail.com", password:"chevre", address:"Toulon", phone:"0678988778", description:"j'adore les chevres moi aussi")
+user3 = User.create!(first_name:"Vincent", last_name:"Fiorini", email:"vincent@gmail.com", password:"chevre", address:"Toulon", phone:"0678988778", description:"j'adore les chevres moi aussi")
+
 puts "users created"
 
 file = URI.open("https://res.cloudinary.com/drnblm552/image/upload/v1606398133/sj4wp5w5f5zmzoy60hqrm8ccfkg6.jpg")
@@ -27,7 +29,5 @@ goat1.picture.attach(io: file, filename: 'goat1.png', content_type: 'image/png')
 # goat7 = Goat.create!(name:"Maximator", price: 10, age: 6, race: "alpine", appetite: "dévoreuse de prés", bonus: "fait aussi chien de garde", description:"Maximator n'est pas une chèvre comme les autres. Issue d'une croisement entre une chèvre alpine et un ours polaire, elle ne fera qu'une bouchée de vos terrains les plus grands, ainsi que de vos ennemis", picture:"https://res.cloudinary.com/drnblm552/image/upload/v1606477730/maxx_dfjuvt.jpg", user: user1)
 # goat8 = Goat.create!(name:"Bobette", price: 5, age: 4, race: "angora", appetite: "a les crocs", bonus: "peut vous tricotter un pull", description:"Bobette est une chèvre très cool qui prend la vie comme elle vient.", picture:"https://res.cloudinary.com/drnblm552/image/upload/v1606477734/angora_h9zdcj.jpg", user: user1)
 # goat9 = Goat.create!(name:"Blanchette", price: 4, age: 3, race: "alpine", appetite: "a les crocs", bonus: "d'une douceur incomparable", description:"La fameuse chèvre de M.Seguin dévorera vos mauvaises herbes comme personne.", picture:"https://res.cloudinary.com/drnblm552/image/upload/v1606398133/sj4wp5w5f5zmzoy60hqrm8ccfkg6.jpg", user: user1)
-
-
 
 puts "goats created"

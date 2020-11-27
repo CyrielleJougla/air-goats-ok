@@ -1,6 +1,6 @@
 class Goat < ApplicationRecord
-  APPETITE = ["a les crocs", "trop trop la dalle", "level expert : dévoreuse de prés"]
-  RACE = %w(alpine angora naine poitevine provençale)
+  APPETITE = ["A les crocs", "Trop trop la dalle", "Dévoreuse de prés"]
+  RACE = %w(Alpine Angora Naine PoitevineProvençale)
   has_one_attached :picture
   belongs_to :user
   has_many :reservations
