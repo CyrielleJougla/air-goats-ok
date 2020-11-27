@@ -9,7 +9,7 @@
         <% else %>
         <% @reservations.each do |resa| %>
 
-          <div class=“card-goat-infos”>
+          <div class="card-goat-infos">
             <%= "Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}" %>
         <% end %>
         </div>
