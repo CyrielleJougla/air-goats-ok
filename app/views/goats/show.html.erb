@@ -17,12 +17,12 @@
 
 <% end %>
 
-  <ul>
-      <br><li> <%= "Age : #{@goat.age} ans" %></li>
-      <br><li> <%= "Race : #{@goat.race.capitalize}" %></li>
-      <br><li> <%= "Appétit : #{@goat.appetite.capitalize}" %></li>
-      <br><li> <%= "Atout charme : #{@goat.bonus.capitalize}" %></li>
-      <br><li> <%= "Prix : #{@goat.price}€ / jour" %></li>
+
+      <br> <%= "Âge : #{@goat.age} ans" %>
+      <br> <%= "Race : #{@goat.race.capitalize}" %>
+      <br> <%= "Appétit : #{@goat.appetite.capitalize}" %>
+      <br> <%= "Atout charme : #{@goat.bonus.capitalize}" %>
+      <br> <%= "Prix : #{@goat.price}€ / jour" %>
   </ul>
 </div>
 
@@ -40,5 +40,5 @@
 </div>
 
 
- <br> <%= link_to "Retour", goats_path %>
+
 </div>

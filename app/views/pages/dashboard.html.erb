@@ -8,9 +8,7 @@
           <p> Vous n'avez pas de réservations en cours.</p>
         <% else %>
         <% @reservations.each do |resa| %>
-          <% if resa.goat.picture.attached? %>
-            <img> <%= cl_image_tag resa.goat.picture.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
+
           <div class=“card-goat-infos”>
             <%= "Vous avez réservé #{resa.goat.name.capitalize} du #{resa.start_date} au #{resa.end_date}" %>
         <% end %>
