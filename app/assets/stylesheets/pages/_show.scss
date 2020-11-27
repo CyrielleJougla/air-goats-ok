@@ -2,3 +2,28 @@
    margin-left: auto;
    margin-right: auto;
 }
+
+.card-form {
+  width: auto;
+  height: 800px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #7DD181;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.card-form img{
+  height: 800px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+
+.img-part {
+  margin: 0px;
+  padding: 0px;
+}
+
+.form-part {
+  padding-left: 100px;
+  color: white;
+}
